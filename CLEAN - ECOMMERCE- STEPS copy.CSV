@@ -1,0 +1,1200 @@
+[
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "Order ID",
+          "expression": "value",
+          "columnName": "Order ID",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "Order ID",
+    "expression": "grel:if(isBlank(value), \"ORD-\" + (10000 + cells[\"Customer Email\"].value.split(\"@\")[0].replace(\"customer\",\"\").toNumber()), value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Order ID using expression grel:if(isBlank(value), \"ORD-\" + (10000 + cells[\"Customer Email\"].value.split(\"@\")[0].replace(\"customer\",\"\").toNumber()), value)"
+  },
+  {
+    "op": "core/row-removal",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "Order ID",
+          "expression": "value",
+          "columnName": "Order ID",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "description": "Remove rows"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "SKU",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column SKU using expression value.trim()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Product Name",
+    "expression": "value.toTitlecase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Product Name using expression value.toTitlecase()"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Product Name",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Facial Cleansing Brush",
+          "  Facial Cleansing Brush  "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Facial Cleansing Brush"
+      },
+      {
+        "from": [
+          "Baby Onesie Pack",
+          "  Baby Onesie Pack  "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Baby Onesie Pack"
+      },
+      {
+        "from": [
+          "Insulated Lunch Box",
+          "  Insulated Lunch Box  "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Insulated Lunch Box"
+      },
+      {
+        "from": [
+          "Anti-aging Face Serum",
+          "  Anti-aging Face Serum  "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Anti-Aging Face Serum"
+      },
+      {
+        "from": [
+          "Kids Building Blocks Set",
+          "  Kids Building Blocks Set  "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Kids Building Blocks Set"
+      },
+      {
+        "from": [
+          "Adjustable Dumbbell Set",
+          "  Adjustable Dumbbell Set  "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Adjustable Dumbbell Set"
+      },
+      {
+        "from": [
+          "Ceramic Coffee Mug Set",
+          "  Ceramic Coffee Mug Set  "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Ceramic Coffee Mug Set"
+      },
+      {
+        "from": [
+          "Stainless Steel Water Bottle",
+          "  Stainless Steel Water Bottle  "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Stainless Steel Water Bottle"
+      },
+      {
+        "from": [
+          "Running Shoes Men",
+          "  Running Shoes Men  "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Running Shoes Men"
+      },
+      {
+        "from": [
+          "Running Shoes Women",
+          "  Running Shoes Women  "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Running Shoes Women"
+      },
+      {
+        "from": [
+          "Electric Toothbrush",
+          "  Electric Toothbrush  "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Electric Toothbrush"
+      },
+      {
+        "from": [
+          "Stainless Steel Knife Set",
+          "  Stainless Steel Knife Set  "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Stainless Steel Knife Set"
+      },
+      {
+        "from": [
+          "Leather Wallet Men",
+          "  Leather Wallet Men  "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Leather Wallet Men"
+      },
+      {
+        "from": [
+          "Kids Backpack",
+          "  Kids Backpack  "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Kids Backpack"
+      }
+    ],
+    "description": "Mass edit cells in column Product Name"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Category",
+    "expression": "value.toTitlecase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Category using expression value.toTitlecase()"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Category",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Electronics",
+          "Electronics "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Electronics"
+      },
+      {
+        "from": [
+          "Toys",
+          "Toys "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Toys"
+      },
+      {
+        "from": [
+          "Beauty",
+          "Beauty "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Beauty"
+      },
+      {
+        "from": [
+          "Apparel",
+          "Apparel "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Apparel"
+      }
+    ],
+    "description": "Mass edit cells in column Category"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Category",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Electronics",
+          "Electronic"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Electronics"
+      }
+    ],
+    "description": "Mass edit cells in column Category"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Category",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Sports & Outdoors",
+          "Sports&outdoors"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sports & Outdoors"
+      },
+      {
+        "from": [
+          "Home & Kitchen",
+          "Home&kitchen"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Home & Kitchen"
+      }
+    ],
+    "description": "Mass edit cells in column Category"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Category",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Beauty"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Beauty Products"
+      }
+    ],
+    "description": "Mass edit cells in column Category"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Category",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Home And Kitchen"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Home & Kitchen"
+      }
+    ],
+    "description": "Mass edit cells in column Category"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Category",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Sports"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sports & Outdoors"
+      }
+    ],
+    "description": "Mass edit cells in column Category"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Category",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Sports And Outdoors"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sports & Outdoors"
+      }
+    ],
+    "description": "Mass edit cells in column Category"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Category",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Toy"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Toys"
+      }
+    ],
+    "description": "Mass edit cells in column Category"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "APPLE PAY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Apple PAY"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Apple PAY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Apple Pay"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "apple pay"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Apple Pay"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "apple_pay"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Apple Pay"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ApplePay"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Apple Pay"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CREDIT CARD"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Credit Card"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "credit card"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CreditCard"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "shopify pay"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Shopify Pay"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ShopifyPay"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Shopify Pay"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "SHOPIFY PAY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Shopify PAY"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Shopify PAY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Shopify Pay"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "shopify_pay"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Shopify Pay"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Credit-Card"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Credit Card"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "creditcard"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "creditcard"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "creditcard"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Credit Card"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CreditCard"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Credit Card"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "gift card"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gift Card"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "GIFT CARD"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gift Card"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Gift-Card"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gift Card"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "giftcard"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Gift Card"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "pay-pal"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Pay Pal"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "PayPal"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Pay Pal"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "paypal"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Pay Pal"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "PAYPAL"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Pay Pal"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Payment Method",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "cc"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Credit Card"
+      }
+    ],
+    "description": "Mass edit cells in column Payment Method"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Price",
+    "expression": "grel:if(value == null, null, value.replace(\"$\", \"\").replace(\"USD \", \"\").toNumber())",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Price using expression grel:if(value == null, null, value.replace(\"$\", \"\").replace(\"USD \", \"\").toNumber())"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Order Status",
+    "expression": "value.toLowercase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Order Status using expression value.toLowercase()"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Order Status",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "unfulfilled",
+          "unfulfilled ",
+          "un-fulfilled"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "unfulfilled"
+      },
+      {
+        "from": [
+          "fulfilled",
+          "fulfilled "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "fulfilled"
+      },
+      {
+        "from": [
+          "cancelled",
+          "cancelled "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "cancelled"
+      },
+      {
+        "from": [
+          "refunded",
+          "refunded "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "refunded"
+      }
+    ],
+    "description": "Mass edit cells in column Order Status"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Order Status",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "fulfilled",
+          "fulfiled"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "fulfilled"
+      },
+      {
+        "from": [
+          "cancelled",
+          "canceled"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "cancelled"
+      }
+    ],
+    "description": "Mass edit cells in column Order Status"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Order Date",
+    "expression": "value.toDate()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Order Date using expression value.toDate()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Quantity",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Quantity using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Price",
+    "expression": "grel:if(not(isNull(value)), value.replace(\"$\", \"\").replace(\"USD \", \"\").toNumber(), null)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Price using expression grel:if(not(isNull(value)), value.replace(\"$\", \"\").replace(\"USD \", \"\").toNumber(), null)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Order Status",
+    "expression": "value.toLowercase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Order Status using expression value.toLowercase()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Order Date",
+    "expression": "grel:value.toString('yyyy-MM-dd')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Order Date using expression grel:value.toString('yyyy-MM-dd')"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "Quantity",
+          "expression": "value",
+          "columnName": "Quantity",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": -1,
+                "l": "-1"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "baseColumnName": "Price",
+    "expression": "grel:if(value < 0, 'Flag: Negative Value', null)",
+    "onError": "set-to-blank",
+    "newColumnName": "Price_Audit_Flag",
+    "columnInsertIndex": 5,
+    "description": "Create column Price_Audit_Flag at index 5 based on column Price using expression grel:if(value < 0, 'Flag: Negative Value', null)"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "Quantity",
+          "expression": "value",
+          "columnName": "Quantity",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": -1,
+                "l": "-1"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "baseColumnName": "Quantity",
+    "expression": "grel:if(value < 0, 'Flag: Negative Value', null)",
+    "onError": "set-to-blank",
+    "newColumnName": "Quantity_Audit_Flag",
+    "columnInsertIndex": 7,
+    "description": "Create column Quantity_Audit_Flag at index 7 based on column Quantity using expression grel:if(value < 0, 'Flag: Negative Value', null)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Data Quality Status",
+    "expression": "value.toLowercase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Data Quality Status using expression value.toLowercase()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Data Quality Status",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Data Quality Status using expression value.trim()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "Customer Email",
+    "expression": "grel:if(value.endsWith('.com'), value, value + '.com')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Customer Email using expression grel:if(value.endsWith('.com'), value, value + '.com')"
+  }
+]
