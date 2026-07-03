@@ -1,4 +1,3 @@
-Order ID	SKU	Product Name	Category	Price	Quantity	Payment Method	Order Status	Order Date	Customer Email
 ORD-10001	SKU-1003	Stainless Steel Knife Set	sports & outdoors		1	apple pay	Unfulfilled 		customer1@example.com
 ORD-10002	SKU-1043	Running Shoes Men	Clothing	$24.64	5	gift card	canceled	12/03/2025	customer2@example.com
 ORD-10003	SKU-1012	Portable Phone Charger	HOME & KITCHEN	$44.04	2	PAYPAL	refunded 	2026-11-23	customer3@example.com
